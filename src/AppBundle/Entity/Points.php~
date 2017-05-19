@@ -1,0 +1,53 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Points
+ *
+ * @ORM\Table(name="Points", indexes={@ORM\Index(name="fk_Points_Players_idx", columns={"Players_id"}), @ORM\Index(name="fk_Points_Games1_idx", columns={"Games_id"})})
+ * @ORM\Entity
+ */
+class Points
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="points", type="integer", nullable=true)
+     */
+    private $points;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Games
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Games")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Games_id", referencedColumnName="id")
+     * })
+     */
+    private $games;
+
+    /**
+     * @var \AppBundle\Entity\Players
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Players")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Players_id", referencedColumnName="id")
+     * })
+     */
+    private $players;
+
+
+}
+
