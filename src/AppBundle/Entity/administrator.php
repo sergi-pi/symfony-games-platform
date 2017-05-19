@@ -8,44 +8,51 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * Admin
  *
- * @ORM\Table(name="Admin", uniqueConstraints={@ORM\UniqueConstraint(name="correu_UNIQUE", columns={"email"})})
- * @ORM\Entity
+ * @ORM\Table(name="administrator")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\administratorRepository")
  */
-class Admin implements UserInterface
+class administrator implements UserInterface
 {
-
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=45, nullable=true)
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=255, nullable=true)
+     * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
 
+
     /**
-     * @var integer
+     * Get id
      *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return int
      */
-    private $id;
-
-
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set email
      *
      * @param string $email
      *
-     * @return Admin
+     * @return administrator
      */
     public function setEmail($email)
     {
@@ -69,7 +76,7 @@ class Admin implements UserInterface
      *
      * @param string $password
      *
-     * @return Admin
+     * @return administrator
      */
     public function setPassword($password)
     {
@@ -86,16 +93,6 @@ class Admin implements UserInterface
     public function getPassword()
     {
         return $this->password;
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 
     /**
@@ -152,3 +149,4 @@ class Admin implements UserInterface
         $this->password = null;
     }
 }
+
