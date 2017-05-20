@@ -10,4 +10,11 @@ namespace AppBundle\Repository;
  */
 class administratorRepository extends \Doctrine\ORM\EntityRepository
 {
+    function findMyself($id){
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 }

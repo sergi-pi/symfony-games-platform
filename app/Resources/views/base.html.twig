@@ -7,7 +7,19 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div id="top-nav">
+            {% block header %}
+                <ul>
+                    <li><a href="{{ path('login') }}">Login</a></li>
+                    <li><a href="{{ path('register') }}">Register</a></li>
+                </ul>
+            {% endblock %}
+        </div>
+        <div id="content">
+            {% block body %}
+            {% endblock %}
+        </div>
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>

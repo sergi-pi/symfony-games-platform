@@ -10,20 +10,34 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
+/*      /**
+     * @Route("/{hola}/{adeu}", name="test")
+     */
 
-/*    /**
-     * @Route("/", name="test")
-     *//*
-    public function indexAction()
+
+    /**
+     * @Route("/", name="home")
+     */
+    public function indexAction(/*$hola, $adeu*/)
     {
-        $administrator = new administrator();
+
+        return $this->render('default/index.html.twig');
+
+       /* $administrator = new ad   ministrator();
         $administrator->setEmail("rasgo509@gmail.com");
         $administrator->setPassword("123$%&");
         $encoder = $this->get('security.encoder_factory')->getEncoder($administrator);
         $encryptedPassword = $encoder->encodePassword($administrator->getPassword(), null);
         $administrator->setPassword($encryptedPassword);
-        $em = $this->getDoctrine()->getManager();
+ /*       $em = $this->getDoctrine()->getManager();
         $em->persist($administrator);
-        $em->flush();
-    }*/
+        $em->flush();*/
+
+        /*$em = $this->getDoctrine()->getManager();
+        $games = $em->getRepository('AppBundle:administrator')->findMyself(2);*/
+/*        dump($hola);
+        dump($adeu);
+        die;*/
+    }
+
 }

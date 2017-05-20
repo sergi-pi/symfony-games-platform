@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Players;
+use AppBundle\Form\RegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -50,13 +51,8 @@ class UserController extends Controller
     public function registerAction(Request $request)
     {
         $player = new Players();
-        $form = $this->createFormBuilder($player)
-            ->add('name')
-            ->add('age')
-            ->add('email')
-            ->add('password', PasswordType::class)
-            ->add('save', SubmitType::class)
-            ->getForm();
+        $form = $this->createForm(RegisterType::class, $player);
+
         $form->handleRequest($request);
         if ($form->isValid()) {
             $encoder = $this->get('security.encoder_factory')->getEncoder($player);
