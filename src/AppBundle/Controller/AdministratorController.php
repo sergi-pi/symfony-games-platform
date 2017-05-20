@@ -22,7 +22,6 @@ class AdministratorController extends Controller
         ));
     }
 
-
     /**
      * @Route("/login_check", name="admin_login_check")
      */

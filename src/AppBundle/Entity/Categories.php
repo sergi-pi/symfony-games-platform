@@ -3,12 +3,13 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Categories
  *
  * @ORM\Table(name="Categories")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\administratorRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\categoriesRepository")
  */
 class Categories
 {

@@ -14,14 +14,14 @@ class DefaultController extends Controller
      * @Route("/{hola}/{adeu}", name="test")
      */
 
-
+/*
     /**
      * @Route("/", name="home")
      */
     public function indexAction()
     {
 
-        return $this->render('default/index.html.twig');
+        /*return $this->render('default/index.html.twig');*/
 
        /* $administrator = new administrator();
         $administrator->setEmail("rasgo509@gmail.com");
