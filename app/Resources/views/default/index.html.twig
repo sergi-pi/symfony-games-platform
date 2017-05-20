@@ -1,15 +1,18 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block body %}
-    <div id="wrapper">
-        <div id="container">
-
-        </div>
+    <div id="sidebar-wrapper">
+        <nav id="spy">
+            <ul class="sidebar-nav nav">
+                {% for category in categories %}
+                <li class="sidebar-brand">
+                    <a href="#"><span class="fa fa-home solo">{{ category.name }}</span></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
     </div>
-{% endblock %}
 
-{% block stylesheets %}
-<style>
-
-</style>
 {% endblock %}

@@ -33,16 +33,13 @@ class UserController extends Controller
      */
     public function loginCheckAction()
     {
-// el "login check" lo hace Symfony automáticamente, por lo que
-// no hay que añadir ningún código en este método
     }
     /**
      * @Route("/logout", name="logout")
      */
     public function logoutAction()
     {
-// el logout lo hace Symfony automáticamente, por lo que
-// no hay que añadir ningún código en este método
+
     }
 
     /**

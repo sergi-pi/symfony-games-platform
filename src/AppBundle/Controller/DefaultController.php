@@ -18,12 +18,12 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="home")
      */
-    public function indexAction(/*$hola, $adeu*/)
+    public function indexAction()
     {
 
         return $this->render('default/index.html.twig');
 
-       /* $administrator = new ad   ministrator();
+       /* $administrator = new administrator();
         $administrator->setEmail("rasgo509@gmail.com");
         $administrator->setPassword("123$%&");
         $encoder = $this->get('security.encoder_factory')->getEncoder($administrator);

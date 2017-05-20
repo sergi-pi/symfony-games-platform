@@ -28,15 +28,11 @@ class AdministratorController extends Controller
      */
     public function loginCheckAction()
     {
-// el "login check" lo hace Symfony automáticamente, por lo que
-// no hay que añadir ningún código en este método
     }
     /**
      * @Route("/logout", name="admin_logout")
      */
     public function logoutAction()
     {
-// el logout lo hace Symfony automáticamente, por lo que
-// no hay que añadir ningún código en este método
     }
 }
