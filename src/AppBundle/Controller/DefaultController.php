@@ -10,11 +10,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-/*      /**
-     * @Route("/{hola}/{adeu}", name="test")
-     */
 
-/*
+
+
     /**
      * @Route("/", name="home")
      */
@@ -38,6 +36,22 @@ class DefaultController extends Controller
 /*        dump($hola);
         dump($adeu);
         die;*/
+
+
+        $gamesRepository = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('AppBundle:Games');
+        $games = $gamesRepository->findAllGames();
+
+        $categoryRepository = $this->getDoctrine()
+            ->getRepository('AppBundle:Categories');
+        $categories = $categoryRepository->findAllOrdered();
+
+        return $this->render('default/index.html.twig',[
+            'categories' => $categories,
+            'games' => $games
+        ]);
+
     }
 
 }

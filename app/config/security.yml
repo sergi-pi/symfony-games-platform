@@ -2,17 +2,8 @@
 # http://symfony.com/doc/current/security.html
 security:
     firewalls:
-        frontend:
-            pattern: ^/play/*
-            provider: Users
-            anonymous: ~
-            form_login:
-                login_path: login
-                check_path: login_check
-            logout:
-                path: logout
         backend:
-            pattern: ^/admin/
+            pattern: ^/admin
             provider: Admins
             anonymous: ~
             form_login:
@@ -20,12 +11,21 @@ security:
                 check_path: admin_login_check
             logout:
                 path: admin_logout
+        frontend:
+            pattern: ^/*
+            provider: Users
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login_check
+            logout:
+                path: logout
     access_control:
+        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/*, roles: ROLE_ADMIN }
         - { path: ^/play/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/play/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/play/*, roles: ROLE_USER }
-        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/*, roles: ROLE_ADMIN }
 
     providers:
         Users:

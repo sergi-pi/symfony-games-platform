@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/play")
+ * @Route("/")
  */
 class UserController extends Controller
 {
@@ -26,7 +26,6 @@ class UserController extends Controller
             'error' => $authUtils->getLastAuthenticationError(),
         ));
     }
-
 
     /**
      * @Route("/login_check", name="login_check")

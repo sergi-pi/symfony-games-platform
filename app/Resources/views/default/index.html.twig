@@ -1,18 +1,19 @@
 {% extends 'base.html.twig' %}
 
-
-
 {% block body %}
-    <div id="sidebar-wrapper">
-        <nav id="spy">
-            <ul class="sidebar-nav nav">
-                {% for category in categories %}
-                <li class="sidebar-brand">
-                    <a href="#"><span class="fa fa-home solo">{{ category.name }}</span></a>
-                </li>
-                {% endfor %}
-            </ul>
-        </nav>
+    <div class="container-fluid">
+        <div class="row">
+            {% for game in games %}
+                <div class="col-md-3 game-box">
+                    <div class="game-title">
+                        {{ game.name }}
+                    </div>
+                    <div class="game-img">
+                        <img class="img-rounded" src="{{ imagepath ~ game.id }}.jpg" alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-
 {% endblock %}
+

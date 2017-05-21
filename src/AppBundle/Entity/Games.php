@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Games
  *
  * @ORM\Table(name="Games", indexes={@ORM\Index(name="fk_Games_Categories1_idx", columns={"Categories_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\gamesRepository")
  */
 class Games
 {

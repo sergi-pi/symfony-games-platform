@@ -7,10 +7,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CategoriesController extends Controller
 {
-    /**
+/*    /**
      * @Route("/", name="home")
      */
-    public function sidebarCategories()
+/*    public function sidebarCategories()
     {
         $categoryRepository = $this->getDoctrine()
             ->getManager()
@@ -20,7 +20,7 @@ class CategoriesController extends Controller
         return $this->render('default/index.html.twig',[
             'categories' => $categories
         ]);
-    }
+    }*/
 }
 
 
