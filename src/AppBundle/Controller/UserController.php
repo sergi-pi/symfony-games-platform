@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class UserController extends Controller
 {
     /**
-     * @Route("/login", name="login")
+     * @Route("/play/login", name="login")
      */
     public function loginAction()
     {

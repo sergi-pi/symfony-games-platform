@@ -5,13 +5,13 @@
         <div class="row">
             <div class="container">
                 {% for game in games %}
-                <div class="col-md-3 game-box">
+                <div class="col-md-3 col-sm-6 game-box">
                     <div class="card">
-                        <img class="card-img-top" src="{{ imagepath ~ game.id }}.jpg" alt="">
+                        <a href="#"><img class="card-img-top img-rounded" src="{{ imagepath ~ game.id }}.jpg" alt="">
                         <div class="card-block">
                             <h4 class="card-title">{{ game.name }}</h4>
                             <p class="card-text">{{ game.description }}</p>
-                        </div>
+                        </div></a>
                     </div>
                 </div>
                 {% endfor %}
