@@ -38,14 +38,12 @@ class Games
     /**
      * @var \AppBundle\Entity\Categories
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categories")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categories", inversedBy="games")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="Categories_id", referencedColumnName="id")
      * })
      */
     private $categories;
-
-
 
     /**
      * Set name

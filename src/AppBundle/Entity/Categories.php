@@ -36,6 +36,13 @@ class Categories
      */
     private $id;
 
+    /**
+     * @var \AppBundle\Entity\Games
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Games", mappedBy="categories")
+     */
+    private $games;
+
 
 
     /**
@@ -98,5 +105,46 @@ class Categories
 
     public function __toString() {
         return $this->getName();
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->games = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add game
+     *
+     * @param \AppBundle\Entity\Games $game
+     *
+     * @return Categories
+     */
+    public function addGame(\AppBundle\Entity\Games $game)
+    {
+        $this->games[] = $game;
+
+        return $this;
+    }
+
+    /**
+     * Remove game
+     *
+     * @param \AppBundle\Entity\Games $game
+     */
+    public function removeGame(\AppBundle\Entity\Games $game)
+    {
+        $this->games->removeElement($game);
+    }
+
+    /**
+     * Get games
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGames()
+    {
+        return $this->games;
     }
 }

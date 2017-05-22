@@ -43,6 +43,7 @@ twig:
     globals:
             imagepath: "/assets/img/"
             variables: '@app.variables'
+            categoriesPath: "/categories/"
 
 # Doctrine Configuration
 doctrine:

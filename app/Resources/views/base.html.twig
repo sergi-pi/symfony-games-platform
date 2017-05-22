@@ -29,7 +29,7 @@
                                             <ul class="dropdown-menu">
                                                 {% for category in variables.getCategories() %}
                                                     <li class="sidebar-brand">
-                                                        <a href="#"><span class="fa fa-home solo">{{ category.name }}</span></a>
+                                                        <a href="{{ path('catSelected',{'id':category.id}) }}"><span class="fa fa-home solo">{{ category.name }}</span></a>
                                                     </li>
                                                 {% endfor %}
                                             </ul>
