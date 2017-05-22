@@ -15,10 +15,21 @@ class AdministratorController extends Controller
      */
     public function loginAction()
     {
+        $gamesRepository = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('AppBundle:Games');
+        $games = $gamesRepository->findAllGames();
+
+        $categoryRepository = $this->getDoctrine()
+            ->getRepository('AppBundle:Categories');
+        $categories = $categoryRepository->findAllOrdered();
+
+
         $authUtils = $this->get('security.authentication_utils');
         return $this->render('administrator/login.html.twig', array(
             'last_username' => $authUtils->getLastUsername(),
             'error' => $authUtils->getLastAuthenticationError(),
+            'categories' => $categories
         ));
     }
 

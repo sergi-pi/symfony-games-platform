@@ -42,6 +42,7 @@ twig:
             - bootstrap_3_horizontal_layout.html.twig
     globals:
             imagepath: "/assets/img/"
+            variables: '@app.variables'
 
 # Doctrine Configuration
 doctrine:

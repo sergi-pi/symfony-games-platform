@@ -1,4 +1,6 @@
-{% block header %}
+{% extends 'base.html.twig' %}
+
+{% block body %}
 {% if error %}
     <div>{{ error.message }}</div>
 {% endif %}

@@ -21,15 +21,15 @@ class DefaultController extends Controller
 
         /*return $this->render('default/index.html.twig');*/
 
-       /* $administrator = new administrator();
+       /*$administrator = new administrator();
         $administrator->setEmail("rasgo509@gmail.com");
         $administrator->setPassword("123$%&");
         $encoder = $this->get('security.encoder_factory')->getEncoder($administrator);
         $encryptedPassword = $encoder->encodePassword($administrator->getPassword(), null);
         $administrator->setPassword($encryptedPassword);
- /*       $em = $this->getDoctrine()->getManager();
+       $em = $this->getDoctrine()->getManager();
         $em->persist($administrator);
-        $em->flush();*/
+        $em->flush();
 
         /*$em = $this->getDoctrine()->getManager();
         $games = $em->getRepository('AppBundle:administrator')->findMyself(2);*/
@@ -37,20 +37,7 @@ class DefaultController extends Controller
         dump($adeu);
         die;*/
 
-
-        $gamesRepository = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:Games');
-        $games = $gamesRepository->findAllGames();
-
-        $categoryRepository = $this->getDoctrine()
-            ->getRepository('AppBundle:Categories');
-        $categories = $categoryRepository->findAllOrdered();
-
-        return $this->render('default/index.html.twig',[
-            'categories' => $categories,
-            'games' => $games
-        ]);
+        return $this->render('default/index.html.twig');
 
     }
 

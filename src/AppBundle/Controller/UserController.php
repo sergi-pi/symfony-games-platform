@@ -11,19 +11,23 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/")
+ * @Route("/play")
  */
 class UserController extends Controller
 {
     /**
-     * @Route("/play/login", name="login")
+     * @Route("/login", name="login")
      */
     public function loginAction()
     {
+        $categoryRepository = $this->getDoctrine()
+            ->getRepository('AppBundle:Categories');
+        $categories = $categoryRepository->findAllOrdered();
         $authUtils = $this->get('security.authentication_utils');
         return $this->render('user/login.html.twig', array(
             'last_username' => $authUtils->getLastUsername(),
             'error' => $authUtils->getLastAuthenticationError(),
+            'categories' => $categories,
         ));
     }
 
@@ -59,8 +63,17 @@ class UserController extends Controller
             $em->flush();
             return $this->redirectToRoute('hola');
         }
+        $gamesRepository = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('AppBundle:Games');
+        $games = $gamesRepository->findAllGames();
+
+        $categoryRepository = $this->getDoctrine()
+            ->getRepository('AppBundle:Categories');
+        $categories = $categoryRepository->findAllOrdered();
         return $this->render('user/register.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'categories' => $categories
         ));
     }
 // ...
