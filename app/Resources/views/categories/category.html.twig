@@ -3,8 +3,9 @@
 {% block body %}
     <div class="container-fluid">
         <div class="row">
-            <div class="container">
-                <h1 class="text-center">{{ category.games|length}} games of: {{ category.name }}</h1>
+            <h1 class="text-center">{{ category.games|length}} games of: {{ category.name }}</h1>
+            <div class="container extend-high">
+
                 {% for game in category.games %}
 
                     <div class="col-md-3 col-sm-6 game-box">
