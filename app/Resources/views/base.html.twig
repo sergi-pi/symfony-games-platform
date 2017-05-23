@@ -11,10 +11,8 @@
     </head>
     <header>
             {% block header %}
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <nav class="navbar navbar-default" role="navigation">
+                <div class="container">
+                            <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse" role="navigation">
                                 <div class="navbar-header">
 
                                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -44,15 +42,18 @@
                                         </button>
                                     </form>
                                     <ul class="nav navbar-nav navbar-right">
-                                        <li><a href="{{ path('register') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+
                                         {% if app.user is not null %}
+                                            <li><a href="{{ path('register') }}"><span class="glyphicon glyphicon-user"></span> {{ app.user.name }}</a></li>
+
                                             <li><a href="{{ path('logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                                         {% else %}
+                                            <li><a href="{{ path('register') }}"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
                                             <li><a href="{{ path('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                                         {% endif %}
                                     </ul>
                                 </div>
-
+                </div>
                             </nav>
                             <div class="row">
                                 <div class="col-md-8">
@@ -60,9 +61,6 @@
                                 <div class="col-md-4">
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
             {% endblock %}
     </header>
     <body>
@@ -70,6 +68,80 @@
         {% block body %}
         {% endblock %}
 
+        {% block footer %}
+            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+            <footer>
+                <div class="container">
+                    <div class="row text-center">
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <ul class="list-inline">
+
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                                </li>
+
+                                <li>
+                                    <a href="#"><i class="fa fa-dropbox fa-2x"></i></a>
+                                </li>
+
+                                <li>
+                                    <a href="#"><i class="fa fa-flickr fa-2x"></i></a>
+                                </li>
+
+                                <li>
+                                    <a href="#"><i class="fa fa-github fa-2x"></i></a>
+                                </li>
+
+                                <li>
+                                    <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+                                </li>
+
+                                <li>
+                                    <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
+                                </li>
+
+                                <li>
+                                    <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <ul class="menu list-inline">
+
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">About</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Blog</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Gallery </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </footer>
+
+        {% endblock %}
 
         {% block javascripts %}
             <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
