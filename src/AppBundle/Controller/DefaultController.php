@@ -41,4 +41,12 @@ class DefaultController extends Controller
 
     }
 
+    /**
+     * @Route("/chat/chats", name="chat")
+     */
+    public function chatAction()
+    {
+        return $this->render('chat/chats.html.twig');
+    }
+
 }
