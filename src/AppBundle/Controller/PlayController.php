@@ -15,6 +15,6 @@ class PlayController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('play/hola.html.twig', array());
+        return $this->render('play/game.html.twig', array());
     }
 }

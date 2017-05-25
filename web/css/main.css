@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #141a1d;
+    background-color: #DADFF7;
 }
 
 .game-box{
@@ -93,4 +93,138 @@ footer .menu li a:hover{
 
 .fa.fa-facebook:hover , .fa.fa-dropbox:hover , .fa.fa-flickr:hover  , .fa.fa-github:hover  , .fa.fa-linkedin:hover  ,.fa,fa-tumblr:hover  ,.fa.fa-google-plus:hover  , .fa.fa-tumblr:hover  {
     color:#6794c2;
+}
+
+.project {
+    margin-bottom: 30px;
+    vertical-align: top;
+    margin-right: 30px;
+    float: left;
+    cursor: pointer;
+    width:100%;
+}
+
+.project figure {
+    position: relative;
+    display: inline-block;
+}
+
+.project figure img {
+    width: 100%;
+}
+.btn-warning bnt-action{
+    margin: 0% 0% auto;
+}
+
+figcaption .project-details {
+    display: block;
+    font-size: 16px;
+    /*line-height: 33px;*/
+    color: #000;
+    /*height: 27px;*/
+    width: 100%;
+    margin: 0 auto 5px auto;
+    /*margin-bottom: 5px;*/
+    overflow: hidden;
+}
+.project figure:hover figcaption {
+    background:#d81e05;
+}
+.project figure:hover figcaption .project-details {
+    color: #fff;
+}
+
+figcaption .project-price {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    font-size: 22px;
+    text-align: right;
+    margin-top: 8px;
+    letter-spacing: -1px;
+    -webkit-font-smoothing: antialiased;
+}
+
+figcaption .project-creator {
+    font-size: 13px;
+    color: #545454;
+    display: block;
+}
+
+figcaption .project-creator {
+    font-size: 13px;
+    color: #545454;
+    display: block;
+}
+
+.project figure .actions button {
+    padding: 13px 20px;
+    font-size: 16px;
+    top: 32%;
+    position: absolute;
+    left: 50%;
+    width: 90%;
+    margin-left: -45%;
+    line-height: 18px;
+    letter-spacing: 1px;
+}
+
+.project figure:hover .actions {
+    background-color: rgba(115,15,2,.8);
+    top: 40%;
+    font-size:1em;
+    font-weight:700;
+}
+
+.project figure .actions {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    top: 70%;
+    left:0;
+    right:0;
+    z-index: 1;
+    opacity: 1;
+    background-color: rgba(29,29,29,.5);
+    -ms-transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    color: white;
+    font-size:1em;
+    padding:2%;
+    font-weight:bold;
+    text-align:center;
+}
+
+
+@media (min-width: 992px) {
+    .project figure .actions {
+        top: 60%;
+        left:0;
+        right:0;
+        font-size:1em;
+        padding:2%;
+
+    }
+    .project figure:hover .actions {
+        top: 50%;
+        font-size:1em;
+        padding-top:0%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .project figure .actions {
+        top: 70%;
+        left:0;
+        right:0;
+        font-size:1em;
+        padding:2%;
+    }
+    .project figure:hover .actions {
+        top: 50%;
+        font-size:1em;
+    }
 }
