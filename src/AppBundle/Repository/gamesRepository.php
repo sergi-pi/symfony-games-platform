@@ -17,4 +17,15 @@ class gamesRepository extends \Doctrine\ORM\EntityRepository
         $query = $qb->getQuery();
         return $query->execute();
     }
+
+    public function findByString($searchString){
+
+        $qb = $this->createQueryBuilder('u')
+            ->where('u.name LIKE :nom')
+            ->setParameter('nom', '%'.$searchString.'%');
+        $query = $qb->getQuery();
+        dump($query->execute());
+        die();
+        return $query->execute();
+    }
 }
