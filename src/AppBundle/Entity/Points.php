@@ -49,6 +49,9 @@ class Points
     private $players;
 
 
+    public function __toString() {
+        return $this->getPlayers()->getName();
+    }
 
     /**
      * Set points

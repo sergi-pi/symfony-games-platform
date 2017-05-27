@@ -52,6 +52,9 @@ class Games
      */
     private $scriptLocation;
 
+    public function __toString() {
+        return $this->getName();
+    }
 
     /**
      * Set name
@@ -150,4 +153,5 @@ class Games
     {
         $this->scriptLocation = $scriptLocation;
     }
+
 }

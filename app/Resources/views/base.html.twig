@@ -6,6 +6,7 @@
         {% block stylesheets %}
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
             <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -73,84 +74,16 @@
         {% endblock %}
 
         {% block footer %}
-            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
             <footer>
-                <div class="container">
-                    <div class="row text-center">
-
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <ul class="list-inline">
-
-                                <li>
-                                    <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fa fa-dropbox fa-2x"></i></a>
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fa fa-flickr fa-2x"></i></a>
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fa fa-github fa-2x"></i></a>
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
-                                </li>
-
-                            </ul>
-                        </div>
-
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <ul class="menu list-inline">
-
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">About</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">Blog</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">Gallery </a>
-                                </li>
-
-                                <li>
-                                    <a href="#">Contact</a>
-                                </li>
-
-                            </ul>
-                        </div>
-
-
-                    </div>
-                </div>
+                <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="https://github.com/sergi-pi/symfony-games-platform" target="_blank"> Sergi Pi</a>, All rights reserved 2016-2017.</p>
             </footer>
-
         {% endblock %}
 
         {% block javascripts %}
             <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        {% endblock %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            {% endblock %}
     </body>
 </html>
 

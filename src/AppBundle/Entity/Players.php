@@ -50,6 +50,9 @@ class Players implements UserInterface
      */
     private $id;
 
+    public function __toString() {
+        return $this->getName();
+    }
 
 
     /**

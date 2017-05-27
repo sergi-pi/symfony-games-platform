@@ -17,4 +17,12 @@ class PlayController extends Controller
     {
         return $this->render('play/game.html.twig', array());
     }
+
+    /**
+     * @Route("/udpatePoints", name="updatePoints")
+     */
+    public function updateAction()
+    {
+        return $this->render('default/index.html.twig');
+    }
 }
