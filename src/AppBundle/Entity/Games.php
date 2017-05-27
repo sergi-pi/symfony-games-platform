@@ -46,6 +46,14 @@ class Games
     private $categories;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="script_location", type="string", length=45, nullable=true)
+     */
+    private $scriptLocation;
+
+
+    /**
      * Set name
      *
      * @param string $name
@@ -125,5 +133,21 @@ class Games
     public function getCategories()
     {
         return $this->categories;
+    }
+
+    /**
+     * @return string
+     */
+    public function getScriptLocation()
+    {
+        return $this->scriptLocation;
+    }
+
+    /**
+     * @param string $scriptLocation
+     */
+    public function setScriptLocation($scriptLocation)
+    {
+        $this->scriptLocation = $scriptLocation;
     }
 }

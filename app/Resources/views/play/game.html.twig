@@ -1,1 +1,8 @@
 {% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        <canvas width="600" height="700" id="c"></canvas>
+    </div>
+    <script src="{{ chosenGame.scriptLocation }}"></script>
+{% endblock %}

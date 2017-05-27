@@ -2,23 +2,20 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Games;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
 class GamesController extends Controller
 {
-/*    /**
-* @Route("/", name="home")
+/**
+* @Route("/play/game{id}", name="chosenGame")
 */
-   /* public function contentGames()
+   public function contentGames(Games $chosenGame)
     {
-        $gamesRepository = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:Games');
-        $games = $gamesRepository->findAllGames();
 
-        return $this->render('default/index.html.twig',[
-            'games' => $games
+        return $this->render('/play/game.html.twig',[
+            'chosenGame' => $chosenGame
         ]);
-    }*/
+    }
 }

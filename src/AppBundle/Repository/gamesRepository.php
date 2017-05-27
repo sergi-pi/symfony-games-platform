@@ -24,8 +24,6 @@ class gamesRepository extends \Doctrine\ORM\EntityRepository
             ->where('u.name LIKE :nom')
             ->setParameter('nom', '%'.$searchString.'%');
         $query = $qb->getQuery();
-        dump($query->execute());
-        die();
         return $query->execute();
     }
 }

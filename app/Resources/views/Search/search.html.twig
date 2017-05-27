@@ -1,5 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ games.name }}
+    <h1 class="text-center">We found this!</h1>
+    <div class="container">
+        <hr class="divider-title">
+        <div class="row">
+            {% for result in results %}
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="project">
+                        <figure class="img-responsive">
+                            <a href="#"><img class="card-img-top img-rounded" src="{{ imagepath ~ result.id }}.jpg" alt="">
+                                <span class="actions">
+                            <span class="project-details">{{ result.name }}</span></span></a>
+                        </figure>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
