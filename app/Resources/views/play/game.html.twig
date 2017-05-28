@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div>
+    <div class="joc" data-game="{{ chosenGame.id }}" data-user="{{ app.user.id }}">
         <div id="score"></div>
         <canvas id="tetris" width="240" height="400"></canvas>
     </div>

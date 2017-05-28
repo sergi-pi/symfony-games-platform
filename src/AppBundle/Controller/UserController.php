@@ -76,5 +76,16 @@ class UserController extends Controller
             'categories' => $categories
         ));
     }
-// ...
+
+    /**
+     * @Route("/profile", name="profile")
+     */
+    public function profileAction()
+    {
+        $pointsPerGame = $this->getDoctrine()->getRepository('AppBundle:Points');
+        return $this->render('fortune/showCategory.html.twig',[
+            'category' => $category,
+            'fortunesPrinted' => $fortunesPrinted,
+        ]);
+    }
 }

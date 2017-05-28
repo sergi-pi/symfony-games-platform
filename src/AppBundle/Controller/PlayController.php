@@ -2,12 +2,13 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Points;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/play")
- */
+
 class PlayController extends Controller
 {
     /**
@@ -19,10 +20,22 @@ class PlayController extends Controller
     }
 
     /**
-     * @Route("/udpatePoints", name="updatePoints")
+     * @Route("/updatepoints", name="updatePoints")
      */
-    public function updateAction()
+    public function updateAction(Request $request)
     {
-        return $this->render('default/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $game = $em->getRepository('AppBundle:Games')->find($request->get('game'));
+        $player = $em->getRepository('AppBundle:Players')->find($request->get('player'));
+
+        $score = $request->get('score');
+        $point = new Points();
+        $point->setPoints($score);
+        $point->setGames($game);
+        $point->setPlayers($player);
+
+        $em->persist($point);
+        $em->flush();
+        return new JsonResponse('Saved new score');
     }
 }

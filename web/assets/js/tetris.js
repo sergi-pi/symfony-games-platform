@@ -174,12 +174,15 @@ function playerReset() {
     player.pos.x = (arena[0].length / 2 | 0) -
                    (player.matrix[0].length / 2 | 0);
     if (collide(arena, player)) {
+        let idJug = $('.joc').data("user");
+        let idJoc = $('.joc').data("game");
+        console.log(idJoc);
+        console.log(idJug);
         $.ajax({
-            url: "{{ path('/udpatePoints') }}",
-            type: "GET",
-            data: player.score,
-            success: function() {alert("ok");}
-        });
+            url:' http://homestead.app/updatepoints',
+            type: "POST",
+            data: {score:player.score, game:idJoc, player: idJug}
+            });
         arena.forEach(row => row.fill(0));
         player.score = 0;
         updateScore();
@@ -253,5 +256,3 @@ const player = {
 playerReset();
 updateScore();
 update();
-
-console.log(player.score);
