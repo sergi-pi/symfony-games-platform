@@ -12,11 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class pointsRepository extends EntityRepository
 {
-    public function findSumPoints()
+    public function findSumPoints($player)
     {
-        /*$qb = $this->createQueryBuilder('point')
-            ->addOrderBy('point.name', 'ASC');
-        $query = $qb->getQuery();
-        return $query->execute();*/
+        return $this->createQueryBuilder('point')
+            ->select('SUM(point.points) as sumPoints, games.name, games.id')
+            ->leftJoin('point.games', 'games')
+            ->addGroupBy('games.id', 'point.games')
+            ->getQuery()
+            ->getResult();
     }
 }
+

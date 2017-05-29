@@ -1,1 +1,21 @@
 {% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+    <div class="row">
+    {% for point in points %}
+                <div class="col-md-6">
+                    <div class="media">
+                        <div class="media-left">
+                                <img src="{{ imagepath ~ point.id }}.jpg" alt="">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">{{ point.name }}</h4>
+                            POINTS: {{ point.sumPoints }}
+                        </div>
+                    </div>
+                </div>
+    {% endfor %}
+    </div>
+    </div>
+
+{% endblock %}

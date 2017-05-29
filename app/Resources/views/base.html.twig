@@ -47,7 +47,7 @@
                                     <ul class="nav navbar-nav navbar-right">
 
                                         {% if app.user is not null %}
-                                            <li><a href="{{ path('logout') }}"><span class="glyphicon glyphicon-user"></span> {{ app.user.name }}</a></li>
+                                            <li><a href="{{ path('profile') }}"><span class="glyphicon glyphicon-user"></span> {{ app.user.name }}</a></li>
 
                                             <li><a href="{{ path('logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                                         {% else %}

@@ -82,6 +82,13 @@ class UserController extends Controller
      */
     public function profileAction()
     {
-        return $this->render('user/profile.html.twig');
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $points = $this->getDoctrine()->getRepository('AppBundle:Points')->findSumPoints($user);
+
+        return $this->render('user/profile.html.twig', array(
+            'points' => $points
+    ));
     }
 }
+
+/*joc, points*/
