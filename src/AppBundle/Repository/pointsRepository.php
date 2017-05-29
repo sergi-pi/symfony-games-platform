@@ -15,8 +15,10 @@ class pointsRepository extends EntityRepository
     public function findSumPoints($player)
     {
         return $this->createQueryBuilder('point')
-            ->select('SUM(point.points) as sumPoints, games.name, games.id')
+            ->select('SUM(point.points) as sumPoints, games.name, games.id', 'games.description')
             ->leftJoin('point.games', 'games')
+            ->andWhere('point.players = :player')
+            ->setParameter(':player', $player)
             ->addGroupBy('games.id', 'point.games')
             ->getQuery()
             ->getResult();

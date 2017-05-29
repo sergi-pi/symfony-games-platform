@@ -368,3 +368,7 @@ figcaption .project-creator {
 nav.navbar.navbar-toggleable-md.navbar-inverse.fixed-top.bg-inverse {
     border-radius: 0;
 }
+
+li.span4.thumbnail.col-md-2.col-sm-2 {
+    min-height: 212px;
+}

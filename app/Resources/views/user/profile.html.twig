@@ -1,21 +1,19 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <div class="container">
-    <div class="row">
-    {% for point in points %}
-                <div class="col-md-6">
-                    <div class="media">
-                        <div class="media-left">
-                                <img src="{{ imagepath ~ point.id }}.jpg" alt="">
+        <h1 class="text-center">Here are the points you made in our games {{ app.user.name }} !</h1>
+        <div class="row">
+        <ul class="thumbnails">
+            {% for point in points %}
+                <li class="span4 thumbnail col-md-2 col-sm-2">
+                        <img src="{{ imagepath ~ point.id }}.jpg" alt="">
+                        <div class="caption text-center">
+                            <h4>{{ point.name }}</h4>
+                            <p><strong>POINTS:</strong> <u>{{ point.sumPoints }}</u></p>
                         </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">{{ point.name }}</h4>
-                            POINTS: {{ point.sumPoints }}
-                        </div>
-                    </div>
-                </div>
-    {% endfor %}
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
     </div>
-    </div>
-
 {% endblock %}

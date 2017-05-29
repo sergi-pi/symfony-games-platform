@@ -61,7 +61,7 @@ class UserController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($player);
             $em->flush();
-            return $this->redirectToRoute('hola');
+            return $this->redirectToRoute('profile');
         }
         $gamesRepository = $this->getDoctrine()
             ->getManager()
@@ -90,5 +90,3 @@ class UserController extends Controller
     ));
     }
 }
-
-/*joc, points*/
