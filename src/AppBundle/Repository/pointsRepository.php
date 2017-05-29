@@ -14,9 +14,9 @@ class pointsRepository extends EntityRepository
 {
     public function findSumPoints()
     {
-        $qb = $this->createQueryBuilder('point')
+        /*$qb = $this->createQueryBuilder('point')
             ->addOrderBy('point.name', 'ASC');
         $query = $qb->getQuery();
-        return $query->execute();
+        return $query->execute();*/
     }
 }

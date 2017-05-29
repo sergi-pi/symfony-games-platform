@@ -82,10 +82,6 @@ class UserController extends Controller
      */
     public function profileAction()
     {
-        $pointsPerGame = $this->getDoctrine()->getRepository('AppBundle:Points');
-        return $this->render('fortune/showCategory.html.twig',[
-            'category' => $category,
-            'fortunesPrinted' => $fortunesPrinted,
-        ]);
+        return $this->render('user/profile.html.twig');
     }
 }
