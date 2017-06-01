@@ -4,8 +4,10 @@ namespace AppBundle\Controller;
 
 use AppBundle\AppBundle;
 use AppBundle\Entity\administrator;
+use AppBundle\Repository\pointsRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
@@ -48,5 +50,18 @@ class DefaultController extends Controller
     {
         return $this->render('chat/chats.html.twig');
     }
+
+    /**
+     * @Route("/freixa", name="freixa")
+     */
+    public function freixaAction()
+    {
+        $infoTop = $this->getDoctrine()
+        ->getRepository('AppBundle:Points');
+        $results = $infoTop->sumPointsPerGame();
+
+        return new JsonResponse($results);
+    }
+
 
 }

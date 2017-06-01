@@ -23,5 +23,16 @@ class pointsRepository extends EntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function sumPointsPerGame()
+    {
+        return $this->createQueryBuilder('points')
+            ->select('max(points.points) as punts, games.name as gameName, players.name')
+            ->leftJoin('points.games', 'games')
+            ->leftJoin('points.players','players')
+            ->addGroupBy('games.id', 'players')
+            ->getQuery()
+            ->getArrayResult();
+    }
 }
 

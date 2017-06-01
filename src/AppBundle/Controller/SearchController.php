@@ -24,7 +24,7 @@ class SearchController extends Controller
             ->getRepository('AppBundle:Games');
         $games = $gamesRepository->findAllGames();
 
-        return $this->render('search/search.html.twig',[
+        return $this->render('Search/search.html.twig',[
             'results' => $results
         ]);
 
